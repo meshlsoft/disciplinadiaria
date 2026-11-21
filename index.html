@@ -1,9 +1,86 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#17251f"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Disciplina Diária"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon.svg"><title>Disciplina Diária</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#17251f"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Disciplina Diária"><link rel="manifest" href="manifest.json"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png"><link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"><title>Disciplina Diária</title>
 <style>
 :root{--bg:#f4f2ec;--card:#fffefa;--ink:#202923;--muted:#747b73;--line:#e5e3da;--green:#315c48;--green2:#e6efe8;--red:#a34d42;--shadow:0 5px 20px #26382d0b}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:calc(86px + env(safe-area-inset-bottom))}.wrap{max-width:720px;margin:auto;padding:18px 16px 30px}.top{display:flex;align-items:center;justify-content:space-between;margin:8px 0 20px}.brand{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);font-weight:800}.sub,.muted{color:var(--muted);font-size:13px}.datebox,.item,.stat,.authbox{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px;margin:10px 0;box-shadow:var(--shadow)}.date-nav{display:flex;align-items:center;justify-content:space-between;gap:7px;flex-wrap:wrap}.date-nav button,.tab,.action,button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:11px;padding:10px 12px;font-size:14px}.date-nav input{border:0;background:transparent;color:var(--ink);font-size:15px;max-width:155px}.daytitle{font-size:25px;font-weight:750;margin:10px 0 2px}.progress{height:8px;background:#e8e7df;border-radius:20px;overflow:hidden;margin-top:14px}.bar{height:100%;width:0;background:var(--green)}.progressline{display:flex;justify-content:space-between;margin-top:8px;font-size:12px;color:var(--muted)}h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin:24px 4px 10px}.itemhead{display:flex;align-items:center;gap:12px}.check{appearance:none;width:25px;height:25px;border:1.7px solid #aeb6ac;border-radius:8px;flex:none;margin:0;display:grid;place-items:center}.check:checked{background:var(--green);border-color:var(--green)}.check:checked:after{content:'✓';color:white;font-weight:800}.name{font-weight:650;flex:1}.state{font-size:11px;color:var(--muted)}.item.done .name{text-decoration:line-through;color:#788078}.detail{margin:12px 0 0 37px;display:grid;gap:9px}.detail label{font-size:12px;color:var(--muted)}textarea,input[type=number],input[type=email],input[type=password],input[type=text],input[type=date],input[type=month],select{width:100%;border:1px solid var(--line);background:white;border-radius:10px;padding:10px 11px;font:14px inherit;color:var(--ink)}textarea{min-height:48px;resize:vertical}.minutes{display:flex;align-items:center;gap:10px}.minutes input{max-width:110px}.minutes span{font-size:13px;color:var(--muted)}.tabs{position:fixed;bottom:0;left:0;right:0;background:#fffefaee;backdrop-filter:blur(16px);border-top:1px solid var(--line);display:flex;justify-content:center;padding:9px 8px calc(9px + env(safe-area-inset-bottom));z-index:5}.tabrow{display:flex;width:min(720px,100%);gap:4px}.tab{flex:1;border:0;background:transparent;color:var(--muted);padding:10px 3px;font-size:12px}.tab.active{background:var(--green2);color:var(--green);font-weight:750}.panel{display:none}.panel.active{display:block}.statgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{margin:0}.stat strong{font-size:27px;display:block;margin-top:6px}.stat small{color:var(--muted)}.rowstat{display:flex;justify-content:space-between;gap:12px;padding:12px 2px;border-bottom:1px solid var(--line);font-size:14px}.actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.primary{background:var(--green);color:white;border-color:var(--green)}.danger{color:var(--red)}.empty{padding:22px;text-align:center;color:var(--muted);background:var(--card);border-radius:15px}.hidden{display:none!important}.foot{font-size:12px;color:var(--muted);line-height:1.5;margin-top:22px}.notice{padding:11px 13px;background:var(--green2);border-radius:12px;color:var(--green);font-size:13px;margin:10px 0}.error{background:#f8e9e6;color:#8e392f}.pill{display:inline-block;border-radius:99px;padding:4px 8px;background:#eeeae0;font-size:11px;color:#625f55}.activity-row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;border-bottom:1px solid var(--line);padding:12px 0}.activity-row small{display:block;color:var(--muted);margin-top:3px}.fieldgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.fieldgrid .wide{grid-column:1/-1}.authbox{max-width:460px;margin:8vh auto;padding:22px}.authbox h1{font-size:23px;margin:8px 0}.authbox label{display:block;font-size:12px;color:var(--muted);margin:12px 0 5px}.hidden{display:none!important}@media(min-width:560px){.wrap{padding-top:28px}.item{padding:16px}}
+
+/* Mobile-first compact layout */
+:root{--shadow:0 1px 5px #26382d08}
+body{font-size:15px;padding-bottom:calc(66px + env(safe-area-inset-bottom))}
+.wrap{width:100%;max-width:760px;padding:8px 11px calc(18px + env(safe-area-inset-bottom))}
+.top{margin:2px 2px 9px;min-height:30px;gap:8px}
+.brand{font-size:10px;letter-spacing:.12em}
+.sub,.muted{font-size:11px}
+#syncStatus{white-space:nowrap;font-size:10px}
+.datebox,.stat,.authbox{border-radius:12px;padding:10px;margin:6px 0}
+.datebox{box-shadow:none}
+.date-nav{gap:4px;flex-wrap:nowrap}
+.date-nav button{min-width:34px;padding:7px 9px;border-radius:9px;font-size:13px}
+.date-nav input{min-width:0;width:100%;max-width:none;text-align:center;font-size:13px;padding:6px 2px}
+#goToday{white-space:nowrap}
+.daytitle{font-size:18px;line-height:1.2;margin:6px 0 1px}
+.progress{height:5px;margin-top:8px}
+.progressline{margin-top:5px;font-size:10px}
+h2{font-size:11px;letter-spacing:.1em;margin:13px 3px 5px}
+.item{border-radius:10px;padding:8px 9px;margin:4px 0;box-shadow:none}
+.itemhead{gap:8px;min-height:27px}
+.name{font-size:13px;line-height:1.25;min-width:0}
+.state{font-size:10px;white-space:nowrap}
+.check{width:23px;height:23px;border-radius:7px}
+.detail{margin:6px 0 0 31px;gap:6px}
+.detail label{font-size:10px}
+textarea,input[type=number],input[type=email],input[type=password],input[type=text],input[type=date],input[type=month],select{padding:7px 9px;border-radius:8px;font-size:13px;min-height:34px}
+textarea{min-height:54px}
+.minutes{gap:7px}
+.minutes input{max-width:86px}
+.minutes span{font-size:11px}
+.comment-box{margin-top:1px}
+.comment-box summary{font-size:11px;color:var(--muted);cursor:pointer;list-style:none;padding:3px 0;min-height:24px;display:flex;align-items:center}
+.comment-box summary::-webkit-details-marker{display:none}
+.comment-box summary:before{content:'＋';font-size:13px;margin-right:5px;color:var(--green)}
+.comment-box[open] summary:before{content:'−'}
+.comment-box textarea{display:block;margin-top:4px;width:100%;min-height:52px}
+.tabs{padding:5px 4px calc(5px + env(safe-area-inset-bottom))}
+.tabrow{width:100%;gap:1px}
+.tab{min-width:0;padding:8px 1px;font-size:10px;line-height:1.15;border-radius:8px;white-space:nowrap}
+.statgrid{gap:6px}
+.stat{padding:9px}
+.stat strong{font-size:21px;margin-top:3px}
+.rowstat{font-size:12px;padding:8px 1px;gap:8px}
+.actions{gap:6px;margin:8px 0}
+.actions button,button{padding:8px 10px;font-size:12px;border-radius:9px}
+.activity-row{gap:5px;padding:8px 0}
+.activity-row small{font-size:10px}
+.fieldgrid{gap:7px}
+.notice{padding:8px 10px;font-size:11px}
+.authbox{margin:5vh auto;padding:16px}
+.authbox h1{font-size:20px}
+.authbox label{margin:9px 0 4px;font-size:11px}
+.foot{font-size:10px;margin-top:14px}
+@media(min-width:560px){
+  body{font-size:16px;padding-bottom:82px}
+  .wrap{padding:18px 18px 28px}
+  .top{margin:6px 0 14px}
+  .brand{font-size:11px}
+  .sub,.muted{font-size:12px}
+  .datebox,.stat,.authbox{padding:13px;margin:8px 0}
+  .daytitle{font-size:22px}
+  h2{font-size:12px;margin:19px 4px 8px}
+  .item{padding:10px 12px;margin:6px 0}
+  .name{font-size:14px}
+  .detail{margin:8px 0 0 34px}
+  .tab{font-size:12px;padding:9px 4px}
+  .stat strong{font-size:25px}
+}
+@media(max-width:360px){
+  .wrap{padding-left:8px;padding-right:8px}
+  .date-nav{gap:2px}
+  .date-nav button{padding:7px 7px;min-width:30px}
+  .tab{font-size:9px}
+  .state{font-size:9px}
+}
+
 </style></head>
 <body>
 <div id="authView" class="authbox hidden"><div class="brand">Disciplina Diária</div><h1>Acesse seu tracker</h1><p class="muted">Entre com sua conta. O administrador pode criar a conta principal; convidados precisam ser adicionados ao tracker.</p><label>E-mail</label><input id="authEmail" type="email" autocomplete="email"><label>Senha</label><input id="authPassword" type="password" autocomplete="current-password"><div class="actions"><button class="primary" id="loginBtn">Entrar</button><button id="signupBtn">Criar conta principal</button></div><div id="authMessage" class="muted"></div></div>
@@ -29,7 +106,7 @@ async function loadWorkspace(){setSync('Sincronizando…');let {data:members,err
 const m=members[0];tracker=m.trackers||{id:m.tracker_id};role=m.role;showApp();await refreshAll();}
 async function refreshAll(){if(!tracker)return;setSync('Sincronizando…');const [a,r]=await Promise.all([supabase.from('activities').select('*').eq('tracker_id',tracker.id).eq('active',true).order('position'),supabase.from('daily_entries').select('*').eq('tracker_id',tracker.id)]);if(a.error||r.error){setSync('Erro de sincronização');alert((a.error||r.error).message);return}activities=a.data||[];records={};(r.data||[]).forEach(x=>{records[x.entry_date]??={};records[x.entry_date][x.activity_id]=x.value||{done:false,comment:''}});setSync('Sincronizado');render();}
 function valueFor(date,id){return records[date]?.[id]||{done:false,comment:'',choice:'',minutes:'',number:''}}
-function render(){selected=$('datePick').value||today();$('datePick').value=selected;$('dayTitle').textContent=fmtDate(selected);let html='',group='';for(const a of activities){if(group!==a.group_name){group=a.group_name;html+=`<h2>${esc(group||'Outras atividades')}</h2>`}const v=valueFor(selected,a.id),cfg=a.config||{};html+=`<article class="item ${v.done?'done':''}" data-id="${a.id}"><div class="itemhead"><input class="check" type="checkbox" data-field="done" ${v.done?'checked':''} ${role==='viewer'?'disabled':''}><span class="name">${esc(a.name)}</span><span class="state">${v.done?'Feito':'Não feito'}</span></div><div class="detail">${a.type==='choice'?`<label>Atividade</label><select data-field="choice" ${role==='viewer'?'disabled':''}><option value="">Não realizado</option>${(cfg.choices||[]).map(c=>`<option value="${esc(c)}" ${v.choice===c?'selected':''}>${esc(c)}</option>`).join('')}</select>`:''}${a.type==='duration'?`<div class="minutes"><label>Tempo</label><input type="number" min="0" max="1440" step="1" inputmode="numeric" placeholder="0" value="${esc(v.minutes)}" data-field="minutes" ${role==='viewer'?'disabled':''}><span>minutos</span></div>`:''}${a.type==='number'?`<div class="minutes"><label>Quantidade</label><input type="number" min="0" step="any" placeholder="0" value="${esc(v.number)}" data-field="number" ${role==='viewer'?'disabled':''}><span>${esc(cfg.unit||'unidades')}</span></div>`:''}<label>Comentário</label><textarea data-field="comment" placeholder="Adicionar comentário…" ${role==='viewer'?'disabled':''}>${esc(v.comment)}</textarea></div></article>`}
+function render(){selected=$('datePick').value||today();$('datePick').value=selected;$('dayTitle').textContent=fmtDate(selected);let html='',group='';for(const a of activities){if(group!==a.group_name){group=a.group_name;html+=`<h2>${esc(group||'Outras atividades')}</h2>`}const v=valueFor(selected,a.id),cfg=a.config||{};html+=`<article class="item ${v.done?'done':''}" data-id="${a.id}"><div class="itemhead"><input class="check" type="checkbox" data-field="done" ${v.done?'checked':''} ${role==='viewer'?'disabled':''}><span class="name">${esc(a.name)}</span><span class="state">${v.done?'Feito':'Não feito'}</span></div><div class="detail">${a.type==='choice'?`<label>Atividade</label><select data-field="choice" ${role==='viewer'?'disabled':''}><option value="">Não realizado</option>${(cfg.choices||[]).map(c=>`<option value="${esc(c)}" ${v.choice===c?'selected':''}>${esc(c)}</option>`).join('')}</select>`:''}${a.type==='duration'?`<div class="minutes"><label>Tempo</label><input type="number" min="0" max="1440" step="1" inputmode="numeric" placeholder="0" value="${esc(v.minutes)}" data-field="minutes" ${role==='viewer'?'disabled':''}><span>minutos</span></div>`:''}${a.type==='number'?`<div class="minutes"><label>Quantidade</label><input type="number" min="0" step="any" placeholder="0" value="${esc(v.number)}" data-field="number" ${role==='viewer'?'disabled':''}><span>${esc(cfg.unit||'unidades')}</span></div>`:''}<details class="comment-box" ${v.comment?'open':''}><summary>Comentário${v.comment?' · preenchido':''}</summary><textarea data-field="comment" placeholder="Adicionar comentário…" ${role==='viewer'?'disabled':''}>${esc(v.comment)}</textarea></details></div></article>`}
 $('checklist').innerHTML=html||'<div class="empty">Nenhuma atividade cadastrada.</div>';document.querySelectorAll('#checklist [data-field]').forEach(el=>{el.addEventListener('change',saveEntry);if(el.tagName==='TEXTAREA')el.addEventListener('blur',saveEntry)});updateProgress();}
 function updateProgress(){let n=activities.filter(a=>valueFor(selected,a.id).done).length,p=activities.length?Math.round(n/activities.length*100):0;$('bar').style.width=p+'%';$('progressText').textContent=`${n} de ${activities.length} atividades`;$('progressPct').textContent=p+'%'}
 async function saveEntry(e){if(role!=='owner')return;const card=e.target.closest('.item'),id=card.dataset.id,field=e.target.dataset.field,v={...valueFor(selected,id)},val=field==='done'?e.target.checked:e.target.value;v[field]=val;if(field==='choice')v.done=!!val;if(field==='minutes'||field==='number')v.done=Number(val)>0||v.done;records[selected]??={};records[selected][id]=v;setSync('Salvando…');const {error}=await supabase.from('daily_entries').upsert({tracker_id:tracker.id,activity_id:id,entry_date:selected,value:v,updated_by:user.id},{onConflict:'tracker_id,activity_id,entry_date'});if(error){setSync('Falha ao salvar');alert('Não foi possível salvar: '+error.message);return}setSync('Salvo na nuvem');if(field==='done'||field==='choice')render();else updateProgress();}

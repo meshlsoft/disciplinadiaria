@@ -34,3 +34,13 @@ PWA compartilhada para iPhone, Android e desktop. Usa Supabase (Postgres + Auth)
 - O convite de usuário é iniciado pelo painel Supabase; a aplicação associa ao tracker uma conta já criada/convite já enviado.
 - A primeira publicação requer configurar o projeto Supabase e as credenciais em `config.js`. Isso não pode ser feito sem acesso à sua conta/projeto.
 - O service worker oferece shell offline, mas gravações e sincronização exigem conexão com a internet.
+
+## Interface mobile (v0.3)
+- Mobile-first compact spacing for iPhone screens.
+- Daily activity comments are collapsed by default and expand on demand.
+- Responsive navigation and controls for narrow screens.
+- Service-worker cache version updated so installed PWAs fetch the new interface.
+
+
+## App icon
+The repository root includes `apple-touch-icon.png` (180×180) for iPhone Home Screen installation, PNG favicons, and 192/512px PWA icons. Keep these files at the site root and do not put them behind authentication. The HTML links to them using relative paths, which work with the GitHub Pages project URL.
