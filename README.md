@@ -6,6 +6,7 @@ PWA compartilhada para iPhone, Android e desktop. Usa Supabase (Postgres + Auth)
 - `index.html`: aplicação web.
 - `config.js.example`: modelo de configuração. Copie para `config.js`.
 - `supabase-schema.sql`: tabelas, funções e políticas RLS.
+- `migration-add-counter-activity-type.sql`: migração para habilitar o tipo Contador em um banco Supabase já existente.
 - `manifest.json`, `sw.js`, `icon.svg`: instalação PWA.
 
 ## Configuração do Supabase (gratuito)
@@ -44,3 +45,7 @@ PWA compartilhada para iPhone, Android e desktop. Usa Supabase (Postgres + Auth)
 
 ## App icon
 The repository root includes `apple-touch-icon.png` (180×180) for iPhone Home Screen installation, PNG favicons, and 192/512px PWA icons. Keep these files at the site root and do not put them behind authentication. The HTML links to them using relative paths, which work with the GitHub Pages project URL.
+
+
+## Atualização: tipo Contador
+Se o projeto Supabase já estava criado antes desta versão, abra o SQL Editor e execute uma vez o arquivo `migration-add-counter-activity-type.sql`. Isso atualiza a constraint `activities_type_check` para aceitar `counter`. Em uma instalação nova, o `supabase-schema.sql` já inclui esse tipo.

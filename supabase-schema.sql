@@ -19,7 +19,7 @@ create table if not exists public.activities (
   tracker_id uuid not null references public.trackers(id) on delete cascade,
   name text not null,
   group_name text not null default 'Outras atividades',
-  type text not null default 'yesno' check (type in ('yesno','duration','number','choice')),
+  type text not null default 'yesno' check (type in ('yesno','duration','number','choice','counter')),
   config jsonb not null default '{}'::jsonb,
   position integer not null default 0,
   active boolean not null default true,

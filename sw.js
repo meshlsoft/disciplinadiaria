@@ -1,5 +1,5 @@
-/* Disciplina Diária service worker — cache v8 */
-const CACHE = 'disciplina-diaria-cloud-v8';
+/* Disciplina Diária service worker — cache v9 */
+const CACHE = 'disciplina-diaria-cloud-v9';
 const APP_SHELL = ['./', './index.html', './manifest.json', './apple-touch-icon.png', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', event => {
